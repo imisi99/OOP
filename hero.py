@@ -13,12 +13,12 @@ class Hero:
     def equip_weapon(self):
         if self.weapon is not None and not self.weapon_is_equipped:
             self.attack_damage += self.weapon.attack_increase
-            self.health_point += 3
+            self.health_point += 5
             self.weapon_is_equipped = True
-            print(f"The hero has equipped his {self.weapon.weapon_type} and increased his attack_damage by {self.weapon.attack_increase} damage and gotten an extra 3 HP!")
+            print(f"The hero has equipped his {self.weapon.weapon_type} and increased his attack_damage by {self.weapon.attack_increase} damage and gotten an extra 5 HP!")
     
     def attack(self):
         print(f"Hero attacks for {self.attack_damage} HP")
 
     def talk(self):
-        print("I see you have come to accept DEATH!!")
+        print("Hero: I see you have come to accept DEATH!!!")

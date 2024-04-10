@@ -85,7 +85,7 @@ def round2(hero: Hero, enemy: Enemy):
     if hero.health_point > 0:
         print("The Hero won the battle")
         time.sleep(1)
-        print("Congratulations you have saved the hidden village!!!")
+        print("Congratulations you have saved the hidden village 😊!!!")
         time.sleep(1)
         print("Drop a star on the repository if you liked the game")
 
@@ -98,7 +98,7 @@ def round2(hero: Hero, enemy: Enemy):
 zombie = Zombie(10,1)
 ogre = Ogre(20,3)
 hero = Hero(17, 3)
-weapon = Weapon("Sword", 23)
+weapon = Weapon("Sword", 5)
 hero.weapon = weapon
 
 round1(zombie, hero)

@@ -12,10 +12,10 @@ class Ogre(Enemy):
         )
 
     def talk(self):
-        print("The Ogre is slamming its fist on the ground.")
+        print("Ogre: slamming its fist on the ground.")
     
     def special_attack(self):
-        did_special_attack = random.random() < 0.10
+        did_special_attack = random.random() < 0.20
         if did_special_attack:
             self.attack_damage += 2
             print("The Ogre gets angry and increased attack damage by 2!")

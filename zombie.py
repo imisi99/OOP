@@ -12,7 +12,7 @@ class Zombie(Enemy):
         )
     
     def talk(self):
-        print("*Grumbling..*")
+        print("Zombie: *Grumbling..*")
 
 
     def special_attack(self):
