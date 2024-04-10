@@ -15,7 +15,7 @@ class Enemy:
         print(f"The {self.__type_of_enemy} is moving forward to fight, proceed with caution it deals {self.attack_damage} damage point and it has an health of {self.health_points}!")
     
     def dealing_damage(self):
-        print(f"The {self.__type_of_enemy} has made contact with you and has attacked for {self.attack_damage} health point")
+        print(f"The {self.__type_of_enemy} has made contact and attacked for {self.attack_damage} HP")
 
     def special_attack(self):
         print(f"{self.get_type_of_enemy()} has no special attack!")
