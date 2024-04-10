@@ -5,34 +5,35 @@ from weapon import *
 from hero import *
 import time
 
-def enemy_battle(e1 : Enemy, e2 : Enemy):
+def round1(e1 : Enemy, hero : Hero):
     
     e1.talk()
-    e2.talk()
+    hero.talk()
 
     print('-----------Battle begins!------------')
-    while e1.health_points > 0 and e2.health_points > 0:
+    while e1.health_points > 0 and hero.health_point > 0:
         print('-------------------------------------')
         # Special attack is charging 
         e1.special_attack()
         time.sleep(1)
-        e2.special_attack()
+        if hero.health_point <= 5:
+            hero.equip_weapon()
         time.sleep(1)
         print(f"{e1.get_type_of_enemy()} : {e1.health_points} HP")
         time.sleep(1)
-        print(f"{e2.get_type_of_enemy()} : {e2.health_points} HP")
+        print(f"Hero : {hero.health_point} HP")
         time.sleep(1)
 
         #Player one attacks
         e1.dealing_damage()
-        e2.health_points -= e1.attack_damage
-        print(f"{e1.get_type_of_enemy()} has attacked {e2.get_type_of_enemy()} for {e1.attack_damage} HP")
+        hero.health_point -= e1.attack_damage
+        print(f"{e1.get_type_of_enemy()} has attacked the Hero for {e1.attack_damage} HP")
         time.sleep(1)
 
         #Player two attacks
-        e2.dealing_damage()
-        e1.health_points -= e2.attack_damage
-        print(f"{e2.get_type_of_enemy()} has attacked {e1.get_type_of_enemy()} for {e2.attack_damage} HP")
+        hero.attack()
+        e1.health_points -= hero.attack_damage
+        print(f"The Hero has attacked {e1.get_type_of_enemy()} for {hero.attack_damage} HP")
         time.sleep(3)
 
     print("------------Game Over!-----------")
@@ -41,12 +42,16 @@ def enemy_battle(e1 : Enemy, e2 : Enemy):
         print(f'The {e1.get_type_of_enemy()} won the battle')
 
     else:
-        print(f'The {e2.get_type_of_enemy()} won the battle')
+        print(f'The Hero won the battle')
+        time.sleep(1)
+        print("The Hero will proceed to the next round with an extra 5HP")
+        time.sleep(1)
+        hero.health_point += 5
 
 
 
 
-def hero_battle(hero: Hero, enemy: Enemy):
+def round2(hero: Hero, enemy: Enemy):
     hero.talk()
     enemy.talk()
 
@@ -54,6 +59,8 @@ def hero_battle(hero: Hero, enemy: Enemy):
     while hero.health_point > 0 and enemy.health_points > 0:
         print('----------------------')
         #Special attack
+        if hero.health_point <= 5:
+            hero.equip_weapon()
         enemy.special_attack()
         time.sleep(1)
         print(f"{enemy.get_type_of_enemy()} : {enemy.health_points} HP")
@@ -77,19 +84,22 @@ def hero_battle(hero: Hero, enemy: Enemy):
 
     if hero.health_point > 0:
         print("The Hero won the battle")
+        time.sleep(1)
+        print("Congratulations you have saved the hidden village!!!")
+        time.sleep(1)
+        print("Drop a star on the repository if you liked the game")
 
     else:
-        print(f"{enemy.get_type_of_enemy()} won the battle")
-
+        print(f"The {enemy.get_type_of_enemy()} won the battle")
+        time.sleep(1)
+        print("Sorry Try again 😢")
 
     
 zombie = Zombie(10,1)
 ogre = Ogre(20,3)
-
-enemy_battle(zombie, ogre)
-
-
-hero = Hero(15, 3)
+hero = Hero(17, 3)
 weapon = Weapon("Sword", 23)
 hero.weapon = weapon
-hero_battle(hero, ogre)
+
+round1(zombie, hero)
+round2(hero, ogre)

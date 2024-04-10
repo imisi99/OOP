@@ -16,7 +16,7 @@ class Zombie(Enemy):
 
 
     def special_attack(self):
-        did_special_attack = random.random() < 0.70
+        did_special_attack = random.random() < 0.60
         if did_special_attack:
             self.health_points += 2
             print("The zombie regenerated 2HP!")
