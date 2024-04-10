@@ -8,8 +8,11 @@ import time
 def round1(e1 : Enemy, hero : Hero):
     
     e1.talk()
+    time.sleep(1)
     hero.talk()
+    time.sleep(1)
 
+    
     print('-----------Battle begins!------------')
     while e1.health_points > 0 and hero.health_point > 0:
         print('-------------------------------------')
@@ -53,7 +56,9 @@ def round1(e1 : Enemy, hero : Hero):
 
 def round2(hero: Hero, enemy: Enemy):
     hero.talk()
+    time.sleep(1)
     enemy.talk()
+    time.sleep(1)
 
     print('--------Battle begins!--------')
     while hero.health_point > 0 and enemy.health_points > 0:
