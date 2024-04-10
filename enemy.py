@@ -5,8 +5,6 @@ class Enemy:
         self.health_points = health_point
         self.attack_damage = attack_damage
 
-        print(f"A new enemy has been created:\n Type of enemy = {type_of_enemy} \n Health point = {health_point}\n attack damage = {attack_damage} \n")
-
     
     def talk(self):
         print(f"I am Enemy, Be prepared to fight!")
