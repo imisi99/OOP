@@ -1,4 +1,6 @@
 from enemy import *
+import random
+
 
 class Zombie(Enemy):
 
@@ -10,4 +12,12 @@ class Zombie(Enemy):
         )
     
     def talk(self):
-        return "*Grumbling..*"
+        print("*Grumbling..*")
+
+
+    def special_attack(self):
+        did_special_attack = random.random() < 0.70
+        if did_special_attack:
+            self.health_points += 2
+            print("The zombie regenerated 2HP!")
+
