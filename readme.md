@@ -11,8 +11,8 @@ What the game is about?:
 - The game uses the sleep function to slow down the game process so to make it run at a nice pace in the terminal to understand what is happening during battle
 - The game has two rounds as the hero fights the zombie first and then proceed to fight the Ogre if it wins against the zombie
 To run the game you need to have python installed on your Laptop
-- run python main.py(for windows users)
+- run python main.py(for Windows users)
 - run python3 main.py(for unix-like users(MacOS, Linux))
 
 
-You can always run the game again if you didn't win it the first time😉, drop a star if you liked the game.
+You can always run the game again if you didn't win it the first time, drop a star if you liked the game.
